@@ -16,7 +16,7 @@
 <body>
     <div id="wrapper">
         <div>
-            <button onclick="getPeople()">click me</button>
+            <button onclick="getPeople()">click me please</button>
         </div>
 
         <div id="facultySelectDiv"></div>
@@ -42,6 +42,7 @@
         $.ajax({
             url: "${g.createLink(controller: 'examples', action: 'createDropdown')}",
             success: function (data) {
+                console.log(data)
                 $('#facultySelectDiv').append(data)
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
@@ -58,6 +59,7 @@
                 username:username
             },
             success: function (data) {
+                console.log(data)
                 $('#facultyDataDiv').append(data)
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {

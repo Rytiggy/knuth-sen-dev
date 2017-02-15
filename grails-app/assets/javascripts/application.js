@@ -6,8 +6,11 @@
 // to create separate JavaScript files as needed.
 //
 //= require jquery
+//= require jquery.dataTables.min.js
+//= require bootstrap.min.js
 //= require_tree .
 //= require_self
+
 
 if (typeof jQuery !== 'undefined') {
 	(function($) {

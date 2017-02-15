@@ -1,10 +1,99 @@
-body{
-    color: hotpink;
+body , html{
     height: 100%;
     width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
 }
 
-html{
-    height: 100%;
-    width: 100%;
+
+header{
+    background: #F36E21;
+    /*min-height: 51px;*/
+    /*width:100%;*/
+}
+
+
+
+#ritLogo{
+    background:  url("../images/logo.png") no-repeat;
+    width: 350px;
+    height: 51px;
+    margin-right:0;
+}
+
+.navbar-orange{
+    background: #F36E21 ;
+    box-shadow: 0px 5px 15px #888888;
+}
+
+.navbar-brown{
+    background: #513127;
+}
+a:link {  color: white; }
+a:visited {  color: white; }
+a:hover {  color: white; }
+a:active {  color: white; }
+
+
+
+.second-level-nav{
+    background: #666666;
+    width:100%;
+    color:white;
+    margin-top:62px;
+    margin-bottom: 20px;
+}
+
+.second-level-nav .container .nav li a{
+    padding:8px;
+    font-size: 14px;
+}
+.second-level-nav .container .nav li a:hover{
+    color:black;
+}
+
+.card-header{
+    background: #F36E21 ;
+
+}
+
+
+.block-element-container{
+    display: -webkit-flex; /* Safari */
+    -webkit-align-items: center; /* Safari 7.0+ */
+    display: flex;
+    align-items: center;
+    flex-flow: row wrap;
+
+}
+.flex-item {
+    justify-content: center;
+    -webkit-flex: 1; /* Safari 6.1+ */
+    flex: 1;
+    min-width: 300px;
+}
+
+h2{
+    margin:0px;
+    font-size: 24px;
+}
+.text-align-middle{
+   color:#666;
+    margin:10px;
+}
+
+.btn-default{
+    background: #262626;
+    color:white;
+}
+.btn-danger{
+    color:white;
+}
+
+.btn-default:hover{
+    background: #191919;
+    color:white;
+
 }
