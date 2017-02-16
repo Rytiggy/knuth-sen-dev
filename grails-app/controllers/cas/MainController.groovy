@@ -5,8 +5,7 @@ import grails.converters.JSON
 class MainController {
     Md5passService md5passService
 
-    def index() {
-    }
+    def index() { }
 
     def loadForms(){
         def forms = TestingForm.findAll()
@@ -115,14 +114,6 @@ class MainController {
         }
         else{
             render("fail")
-        }
-    }
-
-    def notifyUser(String username){
-        sendMail {
-            to username
-            subject "CAS SENTIENCE"
-            body 'SOON '
         }
     }
 }
