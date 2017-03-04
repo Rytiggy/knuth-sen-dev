@@ -13,6 +13,7 @@
 *= require bootstrap-theme.min
 *= require dataTables.min
 *= require font-awesome
+*= require jquery.growl
 *= require casSpecific
 *= require mobile
 *= require_self

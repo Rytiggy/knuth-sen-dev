@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="knuth-sen-dev dev">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="casdb">
+      <visible>1</visible>
+    </schema>
+<<<<<<< HEAD
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="mysql"/>
+    <schema id="5" parent="1" name="performance_schema"/>
+    <schema id="6" parent="1" name="sys"/>
+    <table id="7" parent="2" name="testing_course"/>
+    <table id="8" parent="2" name="testing_course_testing_section"/>
+    <table id="9" parent="2" name="testing_department"/>
+    <table id="10" parent="2" name="testing_department_testing_course"/>
+    <table id="11" parent="2" name="testing_faculty"/>
+    <table id="12" parent="2" name="testing_form"/>
+    <table id="13" parent="2" name="testing_role"/>
+    <table id="14" parent="2" name="testing_section"/>
+    <column id="15" parent="7" name="id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="16" parent="7" name="version">
+      <Position>2</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="17" parent="7" name="course_coordinator_id">
+      <Position>3</Position>
+      <DataType>bigint(20)|0</DataType>
+    </column>
+    <column id="18" parent="7" name="name">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="19" parent="7" name="FK_2o18wp1m2ec8h49x732fl6g25">
+      <ColNames>course_coordinator_id</ColNames>
+    </index>
+    <key id="20" parent="7" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="21" parent="7" name="FK_2o18wp1m2ec8h49x732fl6g25">
+      <ColNames>course_coordinator_id</ColNames>
+      <RefSchemaName>casdb</RefSchemaName>
+      <RefTableName>testing_faculty</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="22" parent="8" name="testing_course_sections_id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+    </column>
+    <column id="23" parent="8" name="testing_section_id">
+      <Position>2</Position>
+      <DataType>bigint(20)|0</DataType>
+    </column>
+    <index id="24" parent="8" name="FK_e4v549d6jtvswl8r9bwun1guf">
+      <ColNames>testing_course_sections_id</ColNames>
+    </index>
+    <index id="25" parent="8" name="FK_io89a5nes9yo0nj3rmovnd59g">
+      <ColNames>testing_section_id</ColNames>
+    </index>
+    <foreign-key id="26" parent="8" name="FK_e4v549d6jtvswl8r9bwun1guf">
+      <ColNames>testing_course_sections_id</ColNames>
+      <RefSchemaName>casdb</RefSchemaName>
+      <RefTableName>testing_course</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="27" parent="8" name="FK_io89a5nes9yo0nj3rmovnd59g">
+      <ColNames>testing_section_id</ColNames>
+      <RefSchemaName>casdb</RefSchemaName>
+      <RefTableName>testing_section</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="28" parent="9" name="id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="29" parent="9" name="version">
+      <Position>2</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="30" parent="9" name="department_coordinator_id">
+      <Position>3</Position>
+      <DataType>bigint(20)|0</DataType>
+    </column>
+    <column id="31" parent="9" name="name">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="32" parent="9" name="FK_8hbj0xwcfl6birs1myaof4p02">
+      <ColNames>department_coordinator_id</ColNames>
+    </index>
+    <key id="33" parent="9" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="34" parent="9" name="FK_8hbj0xwcfl6birs1myaof4p02">
+      <ColNames>department_coordinator_id</ColNames>
+      <RefSchemaName>casdb</RefSchemaName>
+      <RefTableName>testing_faculty</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="35" parent="10" name="testing_department_courses_id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+    </column>
+    <column id="36" parent="10" name="testing_course_id">
+      <Position>2</Position>
+      <DataType>bigint(20)|0</DataType>
+    </column>
+    <index id="37" parent="10" name="FK_2rn7amvj7m8dtbpsymdrflmwt">
+      <ColNames>testing_department_courses_id</ColNames>
+    </index>
+    <index id="38" parent="10" name="FK_r4c9fgjeb8qn3p0ckal1y7vmd">
+      <ColNames>testing_course_id</ColNames>
+    </index>
+    <foreign-key id="39" parent="10" name="FK_2rn7amvj7m8dtbpsymdrflmwt">
+      <ColNames>testing_department_courses_id</ColNames>
+      <RefSchemaName>casdb</RefSchemaName>
+      <RefTableName>testing_department</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="40" parent="10" name="FK_r4c9fgjeb8qn3p0ckal1y7vmd">
+      <ColNames>testing_course_id</ColNames>
+      <RefSchemaName>casdb</RefSchemaName>
+      <RefTableName>testing_course</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="41" parent="11" name="id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="42" parent="11" name="version">
+      <Position>2</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="43" parent="11" name="expiration">
+      <Position>3</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="44" parent="11" name="fname">
+      <Position>4</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="45" parent="11" name="lname">
+      <Position>5</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="46" parent="11" name="mname">
+      <Position>6</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="47" parent="11" name="password">
+      <Position>7</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="48" parent="11" name="role_id">
+      <Position>8</Position>
+      <DataType>bigint(20)|0</DataType>
+    </column>
+    <column id="49" parent="11" name="token">
+      <Position>9</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="50" parent="11" name="username">
+      <Position>10</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="51" parent="11" name="FK_smnnq05f7cqjok0usue5mf4ee">
+      <ColNames>role_id</ColNames>
+    </index>
+    <key id="52" parent="11" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="53" parent="11" name="FK_smnnq05f7cqjok0usue5mf4ee">
+      <ColNames>role_id</ColNames>
+      <RefSchemaName>casdb</RefSchemaName>
+      <RefTableName>testing_role</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="54" parent="12" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="55" parent="12" name="version">
+      <Position>2</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="56" parent="12" name="course_id">
+      <Position>3</Position>
+      <DataType>bigint(20)|0</DataType>
+    </column>
+    <column id="57" parent="12" name="creation_date">
+      <Position>4</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="58" parent="12" name="description">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="59" parent="12" name="publish_date">
+      <Position>6</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="60" parent="12" name="published">
+      <Position>7</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="61" parent="12" name="question">
+      <Position>8</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="62" parent="12" name="title">
+      <Position>9</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <index id="63" parent="12" name="FK_myw4m1b82uigwgsvccqb3q5a3">
+      <ColNames>course_id</ColNames>
+    </index>
+    <key id="64" parent="12" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="65" parent="12" name="FK_myw4m1b82uigwgsvccqb3q5a3">
+      <ColNames>course_id</ColNames>
+      <RefSchemaName>casdb</RefSchemaName>
+      <RefTableName>testing_course</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="66" parent="13" name="id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="67" parent="13" name="version">
+      <Position>2</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="68" parent="13" name="role">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="69" parent="13" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="70" parent="14" name="id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="71" parent="14" name="version">
+      <Position>2</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="72" parent="14" name="professor_id">
+      <Position>3</Position>
+      <DataType>bigint(20)|0</DataType>
+    </column>
+    <column id="73" parent="14" name="title">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="74" parent="14" name="FK_2o40yqo8iwnkkjosb0v0q2n3i">
+      <ColNames>professor_id</ColNames>
+    </index>
+    <key id="75" parent="14" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="76" parent="14" name="FK_2o40yqo8iwnkkjosb0v0q2n3i">
+      <ColNames>professor_id</ColNames>
+      <RefSchemaName>casdb</RefSchemaName>
+      <RefTableName>testing_faculty</RefTableName>
+      <RefColNames>id</RefColNames>
+=======
+    <schema id="2" name="blog"/>
+    <schema id="3" name="cas_database"/>
+    <schema id="4" name="coderdb"/>
+    <schema id="5" name="formsanalyticsdb"/>
+    <schema id="6" name="formsdb"/>
+    <schema id="7" name="googleanalyticsdb"/>
+    <schema id="8" name="googlesheetdb"/>
+    <schema id="9" name="information_schema"/>
+    <schema id="10" name="messengerdb"/>
+    <schema id="11" name="mysql"/>
+    <schema id="12" name="performance_schema"/>
+    <schema id="13" name="plugintododb"/>
+    <schema id="14" name="ssodb"/>
+    <schema id="15" name="tasksplugindb"/>
+    <schema id="16" name="testappdb"/>
+    <schema id="17" name="votedb"/>
+    <table id="18" parent="1" name="testing_course"/>
+    <table id="19" parent="1" name="testing_course_testing_section"/>
+    <table id="20" parent="1" name="testing_department"/>
+    <table id="21" parent="1" name="testing_department_testing_course"/>
+    <table id="22" parent="1" name="testing_faculty"/>
+    <table id="23" parent="1" name="testing_form"/>
+    <table id="24" parent="1" name="testing_role"/>
+    <table id="25" parent="1" name="testing_section"/>
+    <column id="26" parent="18" name="id">
+      <mandatory>1</mandatory>
+      <data-type>bigint(20)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="27" parent="18" name="version">
+      <mandatory>1</mandatory>
+      <data-type>bigint(20)|0</data-type>
+    </column>
+    <column id="28" parent="18" name="course_coordinator_id">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="29" parent="18" name="name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="30" parent="18" name="description">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="31" parent="18" name="active">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="32" parent="18" name="FK_2o18wp1m2ec8h49x732fl6g25">
+      <columns>course_coordinator_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="33" parent="18" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="34" parent="18" name="FK_2o18wp1m2ec8h49x732fl6g25">
+      <columns>course_coordinator_id</columns>
+      <ref-key>~.testing_faculty.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="35" parent="19" name="testing_course_sections_id">
+      <data-type>bigint(20)|0</data-type>
+    </column>
+    <column id="36" parent="19" name="testing_section_id">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="37" parent="19" name="FK_e4v549d6jtvswl8r9bwun1guf">
+      <columns>testing_course_sections_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="38" parent="19" name="FK_io89a5nes9yo0nj3rmovnd59g">
+      <columns>testing_section_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <foreign-key id="39" parent="19" name="FK_e4v549d6jtvswl8r9bwun1guf">
+      <columns>testing_course_sections_id</columns>
+      <ref-key>~.testing_course.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="40" parent="19" name="FK_io89a5nes9yo0nj3rmovnd59g">
+      <columns>testing_section_id</columns>
+      <ref-key>~.testing_section.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="41" parent="20" name="id">
+      <mandatory>1</mandatory>
+      <data-type>bigint(20)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="42" parent="20" name="version">
+      <mandatory>1</mandatory>
+      <data-type>bigint(20)|0</data-type>
+    </column>
+    <column id="43" parent="20" name="department_coordinator_id">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="44" parent="20" name="name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="45" parent="20" name="active">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="46" parent="20" name="FK_8hbj0xwcfl6birs1myaof4p02">
+      <columns>department_coordinator_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="47" parent="20" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="48" parent="20" name="FK_8hbj0xwcfl6birs1myaof4p02">
+      <columns>department_coordinator_id</columns>
+      <ref-key>~.testing_faculty.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="49" parent="21" name="testing_department_courses_id">
+      <data-type>bigint(20)|0</data-type>
+    </column>
+    <column id="50" parent="21" name="testing_course_id">
+      <data-type>bigint(20)|0</data-type>
+    </column>
+    <index id="51" parent="21" name="FK_2rn7amvj7m8dtbpsymdrflmwt">
+      <columns>testing_department_courses_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="52" parent="21" name="FK_r4c9fgjeb8qn3p0ckal1y7vmd">
+      <columns>testing_course_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <foreign-key id="53" parent="21" name="FK_2rn7amvj7m8dtbpsymdrflmwt">
+      <columns>testing_department_courses_id</columns>
+      <ref-key>~.testing_department.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="54" parent="21" name="FK_r4c9fgjeb8qn3p0ckal1y7vmd">
+      <columns>testing_course_id</columns>
+      <ref-key>~.testing_course.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="55" parent="22" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="56" parent="22" name="version">
+      <mandatory>1</mandatory>
+      <data-type>bigint(20)|0</data-type>
+    </column>
+    <column id="57" parent="22" name="active">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="58" parent="22" name="email">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="59" parent="22" name="expiration">
+      <mandatory>1</mandatory>
+      <data-type>bigint(20)|0</data-type>
+    </column>
+    <column id="60" parent="22" name="fname">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="61" parent="22" name="lname">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="62" parent="22" name="mname">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="63" parent="22" name="password">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="64" parent="22" name="role_id">
+      <data-type>bigint(20)|0</data-type>
+    </column>
+    <column id="65" parent="22" name="token">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="66" parent="22" name="username">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <index id="67" parent="22" name="FK_smnnq05f7cqjok0usue5mf4ee">
+      <columns>role_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="68" parent="22" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="69" parent="22" name="FK_smnnq05f7cqjok0usue5mf4ee">
+      <columns>role_id</columns>
+      <ref-key>~.testing_role.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="70" parent="23" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="71" parent="23" name="version">
+      <mandatory>1</mandatory>
+      <data-type>bigint(20)|0</data-type>
+    </column>
+    <column id="72" parent="23" name="course_id">
+      <data-type>bigint(20)|0</data-type>
+    </column>
+    <column id="73" parent="23" name="creation_date">
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="74" parent="23" name="description">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="75" parent="23" name="publish_date">
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="76" parent="23" name="published">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="77" parent="23" name="question">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="78" parent="23" name="title">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <index id="79" parent="23" name="FK_myw4m1b82uigwgsvccqb3q5a3">
+      <columns>course_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="80" parent="23" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="81" parent="23" name="FK_myw4m1b82uigwgsvccqb3q5a3">
+      <columns>course_id</columns>
+      <ref-key>~.testing_course.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="82" parent="24" name="id">
+      <mandatory>1</mandatory>
+      <data-type>bigint(20)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="83" parent="24" name="version">
+      <mandatory>1</mandatory>
+      <data-type>bigint(20)|0</data-type>
+    </column>
+    <column id="84" parent="24" name="role">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="85" parent="24" name="active">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <key id="86" parent="24" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="87" parent="25" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="88" parent="25" name="version">
+      <mandatory>1</mandatory>
+      <data-type>bigint(20)|0</data-type>
+    </column>
+    <column id="89" parent="25" name="active">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="90" parent="25" name="professor_id">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="91" parent="25" name="title">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <index id="92" parent="25" name="FK_2o40yqo8iwnkkjosb0v0q2n3i">
+      <columns>professor_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="93" parent="25" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="94" parent="25" name="FK_2o40yqo8iwnkkjosb0v0q2n3i">
+      <columns>professor_id</columns>
+      <ref-key>~.testing_faculty.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+>>>>>>> c0fb066c509ed607135a0f8abd2e84a6d14e6272
+    </foreign-key>
+  </database-model>
+</dataSource>

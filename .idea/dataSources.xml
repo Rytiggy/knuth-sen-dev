@@ -2,7 +2,7 @@
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
     <data-source source="LOCAL" name="knuth-sen-dev dev" uuid="6935c077-387c-4b18-ba7c-baaeb08fc66b">
-      <driver-ref>6637d291-abbb-4168-9e83-23828f64e69c</driver-ref>
+      <driver-ref>5af32b91-d506-42df-9205-ac43378464d3</driver-ref>
       <synchronize>true</synchronize>
       <imported>true</imported>
       <remarks>$PROJECT_DIR$/grails-app/conf/DataSource.groovy</remarks>
