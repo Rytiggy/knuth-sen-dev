@@ -5368,3 +5368,14 @@ n:6755:sun/tools/native2ascii/Main
 n:1239:sun/tools/native2ascii/N2AFilter
 n:6065:org/codehaus/groovy/grails/project/container/GrailsProjectRunner$1
 n:2483:sl/org/objectweb/asm/tree/AnnotationNode
+n:13397:org/codehaus/groovy/grails/web/json/JSONArray
+n:2879:org/apache/commons/lang/RandomStringUtils
+y:13909:org/grails/datastore/mapping/reflect/ClassPropertyFetcher
+y:7471:org/codehaus/groovy/grails/commons/GrailsMetaClassUtils
+y:9306:org/springframework/core/MethodParameter
+y:2775:org/springframework/core/SerializableTypeWrapper$MethodParameterTypeProvider
+y:6802:org/springframework/core/Constants
+y:45932:org/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory
+y:7118:org/springframework/beans/factory/support/SimpleInstantiationStrategy
+y:7937:org/springframework/beans/factory/config/DependencyDescriptor
+y:6199:org/springframework/util/MethodInvoker

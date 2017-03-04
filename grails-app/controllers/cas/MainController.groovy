@@ -22,6 +22,30 @@ class MainController {
         }
     };
 
+    def loadUserForms(){
+        TestingCourse testingCourse;
+        if(checkExpiration(request.getHeader('Authorization'))){
+            render template: "expiredSession"
+        }
+        else{
+            expandExpiration(request.getHeader('Authorization'))
+            String token =  request.cookies.find{ 'token' == it.name }?.value
+            def forms = TestingForm.findAllByPublished(1)
+            forms.each{
+                if(forms.course.courseCoordinator.token == token)
+                {
+
+                }
+                else
+                {
+                    forms.remove(it);
+                }
+            }
+
+            render (template: "formsPage", model: [forms: forms])
+        }
+    };
+
     def loadFaculty(){
         if(checkExpiration(request.getHeader('Authorization'))){
             render template: "expiredSession"
