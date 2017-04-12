@@ -43,6 +43,56 @@ function loadLogInPage(){
     });
 }
 
+function loadresetPasswordScreen(){
+    $('#mainContainer').empty();
+    showLoadingSpinner();
+    $.ajax({
+        url: "/knuth-sen-dev/main/resetPasswordScreen",
+        success: function (data) {
+            $('#mainContainer').append(data);
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrown) {
+            console.log('textStatus: ' + textStatus + '  errorThrown: ' + errorThrown)
+        }
+    });
+}
+
+function confirmPassword(){
+    showLoadingSpinner();
+    var oldpassword = $('.oldpasswordInput').val();
+    var newpassword = $('.newpasswordInput').val();
+    var confirmpassword = $('.confirmnewpasswordInput').val();
+
+    if( oldpassword == "" || newpassword == "" || confirmpassword == ""){
+        $.growl.warning({ message: "Please input all data" });
+    }
+    else {
+        $.ajax({
+            url: "/knuth-sen-dev/main/resetPassword",
+            headers: {
+                'Authorization': Cookies.get('token')
+            },
+            type: "POST",
+            data: {
+                oldpassword: oldpassword,
+                newpassword: newpassword,
+                confirmpassword: confirmpassword
+            },
+            success: function (data) {
+                if (data.status === 0) {
+
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                console.log('textStatus: ' + textStatus + '  errorThrown: ' + errorThrown);
+                $.growl.warning({ message: "Reset Password failed" });
+                loadresetPasswordScreen()
+            }
+        });
+    }
+
+}
+
 function deleteForm(that){
     var id = $(that).parent().find('.hiddenId').html();
     var table = $('.formsDisplayTable').DataTable();

@@ -60,6 +60,14 @@
         loadLogInPage();
     });
 
+    $body.on('click', '.resetpassBtn', function () {
+        loadresetPasswordScreen();
+    });
+
+    $body.on('click', '.confirmPassword', function () {
+        confirmPassword();
+    });
+
     $body.on('click', '.cancelGradeInput', function () {
         loadProfView();
     });

@@ -39,6 +39,7 @@
                 <li class="dropdown rolesLi top-nav-bar-buttons"><a class="dropdown-toggle admin userLocation" data-toggle="dropdown" href="#" style="background-color: #f36e21; display: none;">USERNAME</a>
                     <ul class="dropdown-menu" style="margin-top:6px;">
                         <li><a href="#">Profile</a></li>
+                        <li class="resetpassBtn"><a href="#">Reset Password</a></li>
                         <li class="logoutBtn"><a href="#">Logout</a></li>
                     </ul>
                 </li>

@@ -832,6 +832,42 @@ class MainController {
         render template: "loadingScreen"
     }
 
+    def resetPasswordScreen(){
+        render template: "resetPassword"
+    }
+
+    def resetPassword(String oldpassword, String newpassword, String confirmpassword){
+        //get the username
+        JSON resultJson;
+        TestingFaculty testingUser = TestingFaculty.findByToken(request.getHeader('Authorization'));
+        //TestingFaculty testingUser = TestingFaculty.findByUsernameAndPassword(username, md5passService.getEncryptedPass(password))
+        //get the new password
+        String comparUser = testingUser.username
+        String comparPass = testingUser.password
+        expandExpiration(request.getHeader('Authorization'))
+        String testingoldpass = md5passService.getEncryptedPass(oldpassword)
+        //may need to force them to be lowercase
+        if (comparUser == testingUser.username){
+            if(testingoldpass == comparPass){
+                //int stringcountFornewpassword = confirmpassword.length();
+
+
+                if(newpassword == confirmpassword){
+                    testingUser.password = md5passService.getEncryptedPass(confirmpassword)
+                    if (testingUser.save(flush: true)) {
+                        resultJson = [status: 0, message: "Success"] as JSON
+                    } else {
+                        resultJson = [status: 1, message: "Error-username"] as JSON
+                    }
+
+                }
+            }
+        }
+        //check the new password
+        //overwrite the old password
+
+    }
+
     def loadLogIn(){
         TestingFaculty testingUser
 
